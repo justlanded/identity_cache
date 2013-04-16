@@ -1,5 +1,5 @@
 require "identity_cache/version"
-require 'cityhash'
+require 'city_hash'
 require 'ar_transaction_changes'
 require File.dirname(__FILE__) + '/memoized_cache_proxy'
 require File.dirname(__FILE__) + '/belongs_to_caching'
