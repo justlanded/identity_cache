@@ -154,7 +154,7 @@ module IdentityCache
     end
 
     def memcache_hash(key) #:nodoc:
-      Digest.base64digest(key)
+      Digest::SHA1.base64digest(key)
     end
   end
 
