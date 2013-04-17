@@ -1,5 +1,4 @@
 require "identity_cache/version"
-require 'city_hash'
 require 'ar_transaction_changes'
 require File.dirname(__FILE__) + '/memoized_cache_proxy'
 require File.dirname(__FILE__) + '/belongs_to_caching'
@@ -154,7 +153,7 @@ module IdentityCache
     end
 
     def memcache_hash(key) #:nodoc:
-      CityHash.hash64(key)
+      Digest.base64digest(key)
     end
   end
 
