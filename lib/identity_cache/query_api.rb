@@ -33,7 +33,7 @@ module IdentityCache
           end
 
         else
-          self.find_by_id(id)
+          self.find_by(id:id)
         end
       end
 
@@ -92,7 +92,7 @@ module IdentityCache
       end
 
       def resolve_cache_miss(id)
-        self.find_by_id(id, :include => cache_fetch_includes).tap do |object|
+        self.find_by(id: id, :include => cache_fetch_includes).tap do |object|
           object.try(:populate_association_caches)
         end
       end
